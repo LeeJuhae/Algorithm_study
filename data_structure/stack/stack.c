@@ -8,32 +8,28 @@ typedef struct stack{
     struct stack* under_ptr;
 }stack;
 
-stack * push(stack * top_ptr, int num){
-    stack * new = (stack *)calloc(1, sizeof(stack));
-    new->on_ptr = NULL;
-    new->under_ptr = top_ptr;
-    new->input = num;
-    if(top_ptr != NULL)
-        top_ptr->on_ptr = new;
-    top_ptr = new;
-    return top_ptr;
+void push(stack ** top_ptr, int num){
+    stack new;
+    new.on_ptr = (stack *)calloc(1, sizeof(stack));
+    new.under_ptr = (stack *)calloc(1, sizeof(stack));
+    new.on_ptr = NULL;
+    new.under_ptr = *top_ptr;
+    new.input = num;
+    *top_ptr = &new;
 }
-stack * pop(stack * top_ptr, int size){
+void pop(stack ** top_ptr, int size){
     if(size != 0){
-        printf("%d\n",top_ptr->input);
+        printf("%d\n",(*top_ptr)->input);
         if(size != 1){
-            top_ptr = top_ptr->under_ptr;
-            free(top_ptr->on_ptr);
-            top_ptr->on_ptr = NULL;
+            *top_ptr = ((*top_ptr)->under_ptr);
+            (*top_ptr)->on_ptr = NULL;
         }
         else{
-            free(top_ptr);
-            top_ptr = NULL;
+            *top_ptr = NULL;
         }
     }
     else
         printf("-1\n");
-    return top_ptr;
 }
 void size(int stack_size){
     printf("%d\n",stack_size);
@@ -44,9 +40,9 @@ void empty(int stack_size){
     else
         printf("0\n");
 }
-void top(stack * top_ptr, int size){
+void top(stack ** top_ptr, int size){
     if(size != 0)
-        printf("%d\n",top_ptr->input);
+        printf("%d\n",(*top_ptr)->input);
     else
         printf("-1\n");
 }
@@ -80,11 +76,11 @@ int main(){
         }
 
         if(!strcmp(instruction,"push")){
-            top_ptr = push(top_ptr,stack_input);
+            push(&top_ptr,stack_input);
             stack_size ++;
         }
         else if(!strcmp(instruction,"pop")){
-            top_ptr = pop(top_ptr,stack_size);
+            pop(&top_ptr,stack_size);
             if (stack_size >0)
                 stack_size --;
         }
@@ -93,7 +89,7 @@ int main(){
         else if(!strcmp(instruction,"empty"))
             empty(stack_size);
         else if(!strcmp(instruction,"top"))
-            top(top_ptr,stack_size);
+            top(&top_ptr,stack_size);
     }
     return 0;
 }
