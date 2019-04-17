@@ -4,29 +4,20 @@
 
 typedef struct stack{
     int input;
-    struct stack* on_ptr;
     struct stack* under_ptr;
 }stack;
 
 void push(stack ** top_ptr, int num){
-    stack new;
-    new.on_ptr = (stack *)calloc(1, sizeof(stack));
-    new.under_ptr = (stack *)calloc(1, sizeof(stack));
-    new.on_ptr = NULL;
-    new.under_ptr = *top_ptr;
-    new.input = num;
-    *top_ptr = &new;
+    stack * new = (stack *)calloc(1,sizeof(stack));
+    new->under_ptr = *top_ptr;
+    new->input = num;
+    *top_ptr = new;
+    
 }
 void pop(stack ** top_ptr, int size){
     if(size != 0){
         printf("%d\n",(*top_ptr)->input);
-        if(size != 1){
-            *top_ptr = ((*top_ptr)->under_ptr);
-            (*top_ptr)->on_ptr = NULL;
-        }
-        else{
-            *top_ptr = NULL;
-        }
+        *top_ptr = (*top_ptr)->under_ptr;
     }
     else
         printf("-1\n");
@@ -48,8 +39,8 @@ void top(stack ** top_ptr, int size){
 }
 
 int main(){
-    stack * top_ptr = (stack *)calloc(1, sizeof(stack));
-    top_ptr = NULL;
+    stack * top_p= (stack *)calloc(1, sizeof(stack));
+    top_p = NULL;
     int stack_size = 0;
     int stack_input = -1;
     
@@ -76,11 +67,11 @@ int main(){
         }
 
         if(!strcmp(instruction,"push")){
-            push(&top_ptr,stack_input);
+            push(&top_p,stack_input);
             stack_size ++;
         }
         else if(!strcmp(instruction,"pop")){
-            pop(&top_ptr,stack_size);
+            pop(&top_p,stack_size);
             if (stack_size >0)
                 stack_size --;
         }
@@ -89,7 +80,7 @@ int main(){
         else if(!strcmp(instruction,"empty"))
             empty(stack_size);
         else if(!strcmp(instruction,"top"))
-            top(&top_ptr,stack_size);
+            top(&top_p,stack_size);
     }
     return 0;
 }
