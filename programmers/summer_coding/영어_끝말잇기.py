@@ -11,7 +11,7 @@ def solution(n, words):
             if words[i][-1] != words[i+1][0]:
                 answer = [int((i+1)%n)+1,int((i+1)/n)+1]
                 break
-    return answer
+    return answer 
 
 ###reference_code :(
 # def solution(n, words):

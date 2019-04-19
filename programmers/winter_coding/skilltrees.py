@@ -17,6 +17,6 @@ def solution(skill, skill_trees):
                     cnt += 1
                     break
             else:
-                incude = False
+                include = False
     answer = len(skill_trees) - cnt
     return answer
