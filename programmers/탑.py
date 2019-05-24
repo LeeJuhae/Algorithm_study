@@ -6,6 +6,3 @@ def solution(heights):
                 answer[i] = j+1
                 break
     return answer
-    
-###Question    
-<https://programmers.co.kr/learn/courses/30/lessons/42588>
