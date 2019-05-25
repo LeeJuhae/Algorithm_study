@@ -1,75 +1,38 @@
 a,b,c = map(int,input().split())
-
 person = [[int(x) for x in input().split()] for y in range(b)]
-
 av = []
-
 av_k = []
-
 enter = 0
-
 packing = 0
-
 trash = 0
-
 loc = []
-
 sec = [0] * b
-
 for k,i in enumerate(person):
-
     if i[0] == 1:
-
         if i[1] != 3:
-
             av += [[0,i[1]]]
-
             #av.append([0,i[1])
-
             av_k+=[[[0,i[1]],k]]
-
         else:
-
             av += [[0,3]]
-
             av += [[1,4]]
-
             #av.append[0,3])
-
             av_k.append([[0,3],k])
-
             av_k.append([[1,4],k])
-
     elif i == [2,3]:
-
         av += [[2,4]]
-
         av_k.append([[2,4],k])
-
     elif i[0] == 3:
-
         if i[1] != 3:
-
             av += [[4,i[1]]]
-
             #av.append([[4,i[1],k]])
-
             av_k += [[[4,i[1]],k]]
-
         else:
-
             av += [[3,4]]
-
             av += [[4,3]]
-
             av_k += [[[3,4],k]]
-
             av_k += [[[4,3],k]]
-
             #av.append([[3,4,k],[4,3,k]])
-
-
-
 key = -1
 while(True):
     if enter < c:
