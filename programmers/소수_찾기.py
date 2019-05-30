@@ -17,3 +17,17 @@ def solution(n):
             num += 1
             
     return num
+
+import math
+def solution(n):
+    num = -1    
+    for i in range(3 , n+1):
+        for j in range(2,i-1):
+            print(i, j)
+            if i % j == 0:
+                print(i)
+                if i != 2:
+                    num += 1
+                    break
+    print(num)
+    return n-num-1
