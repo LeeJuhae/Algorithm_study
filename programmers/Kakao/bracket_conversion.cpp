@@ -15,7 +15,7 @@
 #include <string>
 #include <vector>
 
-#include <iostream>
+// #include <iostream>
 
 using namespace std;
 
@@ -52,7 +52,7 @@ int getSeparateIdx(string p)
 }
 
 string solution(string p) {
-    string answer = "";
+	string answer = "";
 	string u = "";
 	string v = "";
 	int separate_idx = 0;
