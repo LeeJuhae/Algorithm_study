@@ -13,7 +13,7 @@ string appendStr(int count, string previous, string new_string){
 
 int solution(string s) {
 	int length = s.length();
-    int answer = length;
+	int answer = length;
 	int count;
 	string previous;
 	string new_string;
