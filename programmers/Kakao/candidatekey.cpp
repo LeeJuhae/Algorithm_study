@@ -132,11 +132,11 @@ int solution(vector<vector<string>> relation) {
 }
 
 // int main(){
-// 	vector<vector<string>> relation = {{"100","ryan","music","2"},{"200","apeach","math","2"},{"300","tube","computer","3"},{"400","con","computer","1"},{"500","muzi","music","3"},{"600","apeach","music","2"}};
+// 	// vector<vector<string>> relation = {{"100","ryan","music","2"},{"200","apeach","math","2"},{"300","tube","computer","3"},{"400","con","computer","1"},{"500","muzi","music","3"},{"600","apeach","music","2"}};
 // 	// vector<vector<string>> relation = {{"a","1","4"}, {"2","1","5"}, {"a","2","4"}};
-// 	// vector<vector<string>> relation = {{"ab","c"}, {"a","bc"}, {"a","x"},{"x","c"}};
+// 	vector<vector<string>> relation = {{"ab","c"}, {"a","bc"}, {"a","x"},{"x","c"}};
 // 	// vector<vector<string>> relation = {{"a","b","c"}, {"1","b","c"}, {"a","b","4"},{"a","5","c"}};
 // 	// vector<vector<string>> relation = {{"a","m","2"}, {"b","u","3"}, {"a","m","6"}};
-// 	// cout << solution(relation);
-// 	solution(relation);
+// 	cout << solution(relation);
+// 	// solution(relation);
 // }
