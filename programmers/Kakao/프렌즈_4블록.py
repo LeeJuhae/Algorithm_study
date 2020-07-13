@@ -9,8 +9,8 @@ def scan_board(m, n, board):
     return can_delete, check_board
 
 def pop_block(board, check_board):
-    for i, v in enumerate(board):
-        for j, block in enumerate(v):
+    for i in range(len(board)):
+        for j in range(len(board[i])):
             if check_board[i][j] == 1:
                 board[i] = board[i][:j] + '  ' + board[i][j+2:]
                 board[i+1] = board[i+1][:j] + '  ' + board[i+1][j+2:]

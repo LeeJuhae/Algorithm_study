@@ -18,9 +18,9 @@ def solution(s):
                 comma_cnt += 1
         else:
             str_num += ch
-    info_dict = sorted(info_dict.items())
-    for k, set_v in info_dict:
-        for v in set_v:
+    info = sorted(info_dict.items())
+    for list_v in info:
+        for v in list_v[1]:
             if v not in answer:
                 answer.append(v)
                 break

@@ -8,7 +8,6 @@ def get_multi_set(str):
     return multi_set
 
 def solution(str1, str2):
-    answer = 0
     inter_cnt = 0
     union_cnt = 0
     str1 = str1.upper()
