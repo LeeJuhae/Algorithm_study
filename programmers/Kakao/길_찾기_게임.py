@@ -11,8 +11,7 @@ def make_tree(nodeinfo, y):
 	new_node = Node(nodeinfo[0][2])
 	if len(nodeinfo) != 0:
 		left_nodes, left_y = [], []
-		right_nodes = []
-		right_y = []
+		right_nodes, right_y = [], []
 		for node in nodeinfo:
 			if node[0] < nodeinfo[0][0]:
 				left_nodes.append(node)
