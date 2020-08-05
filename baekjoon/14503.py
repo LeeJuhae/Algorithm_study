@@ -1,3 +1,7 @@
+'''
+백준 - 14503 : 로봇 청소기
+삼성 SW 역량 테스트 기출 문제
+'''
 def cant_go(loc, room):
 	directions = [[0,-1],[-1,0],[0,1],[1,0]]
 	for direction in directions:
