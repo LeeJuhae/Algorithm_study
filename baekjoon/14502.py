@@ -29,14 +29,14 @@ def spread(lab_map):
 					if c != len(lab_map[r]) - 1 and lab_map[r][c+1] == 0:
 						lab_map[r][c+1] = 2
 						conta += 1
-		if (conta == 0):
+		if conta == 0:
 			break
 	return lab_map
 
 def get_safe_zone(conta_map):
 	safe_zone = 0
-	for r in conta_map:
-		safe_zone += r.count(0)
+	for row in conta_map:
+		safe_zone += row.count(0)
 	return safe_zone
 
 def solution(n, m, lab_map):
