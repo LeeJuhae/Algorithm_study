@@ -1,3 +1,11 @@
+'''
+	Baekjoon - 15683. 감시
+	삼성 SW 역량 테스트 기출 문제
+	언어 : Python
+	메모리 : 36,316kb
+	실행시간 : 4760ms
+	코드길이 : 2348b
+'''
 from itertools import product
 import copy
 
@@ -16,29 +24,25 @@ def watch(room, r, c, idx):
 		for i in range(c-1, -1, -1):
 			if room[r][i] == 0 :
 				room[r][i] = '#'
-			# elif room[r][i] == 6:
-			elif room[r][i] != '#':
+			elif room[r][i] == 6:
 				break
 	elif idx == 1:
 		for i in range(r-1, -1, -1):
 			if room[i][c] == 0:
 				room[i][c] = '#'
-			# elif room[r][i] == 6:
-			elif room[r][i] != '#':
+			elif room[i][c] == 6:
 				break
 	elif idx == 2:
 		for i in range(c+1,M):
 			if room[r][i] == 0:
 				room[r][i] = '#'
-			# elif room[r][i] == 6:
-			elif room[r][i] != '#':
+			elif room[r][i] == 6:
 				break
 	elif idx == 3:
 		for i in range(r+1, N):
 			if room[i][c] == 0:
 				room[i][c] = '#'
-			# elif room[r][i] == 6:
-			elif room[r][i] != '#':
+			elif room[i][c] == 6:
 				break
 	return room
 
