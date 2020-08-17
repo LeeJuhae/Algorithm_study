@@ -6,7 +6,7 @@
 	실행시간 : 392ms
 	코드길이 : 2899b
 '''
-def get_sides():
+def get_sides(side_info):
 	sides = {}
 	for side, color in side_info.items():
 		sides[side] = []
@@ -90,7 +90,7 @@ if __name__ == '__main__':
 	side_info = {'U':'w','D':'y','F':'r','B':'o','L':'g','R':'b'}
 	rotating_ways = get_rot_ways()
 	for _ in range(N):
-		sides = get_sides()
+		sides = get_sides(side_info)
 		M = int(input())
 		testcases = list(input().split(' '))
 		sides = rotate(sides, testcases, rotating_ways)
