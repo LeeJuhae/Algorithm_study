@@ -1,17 +1,17 @@
 class Trie():
 	def __init__(self, ch):
 		self.ch = ch
-		self.children = list()
+		self.children = dict()
 		self.children_cnt = 0
 
 	def append(self, child):
-		self.children.append(child)
+		self.children[child.ch] = child
 
 	def get_child(self, ch):
-		for child in self.children:
-			if child.ch == ch:
-				return child
-		return None
+		if ch in self.children:
+			return self.children[ch]
+		else:
+			return None
 
 def create_tries(words, reverse=False):
 	trie_dict = {}
@@ -66,6 +66,3 @@ def solution(words, queries):
 		else:
 			answer.append(query_dic[query])
 	return answer
-
-# print(solution(["frodo", "front", "frost", "frozen", "frame", "kakao"], ["fro??", "????o", "fr???", "fro???", "pro?"]))
-# print(solution(["frost", "fro", "kakaka"], ["?????"]))
