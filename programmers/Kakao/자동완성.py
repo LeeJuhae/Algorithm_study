@@ -1,16 +1,15 @@
 class Trie():
 	def __init__(self, ch):
 		self.ch = ch
-		self.children = list()
+		self.children = dict()
 		self.children_cnt = 0
 
-	def append(self, child):
-		self.children.append(child)
+	def add(self, child):
+		self.children[child.ch] = child
 
 	def get_child(self, ch):
-		for child in self.children:
-			if child.ch == ch:
-				return child
+		if ch in self.children:
+			return self.children[ch]
 		return None
 
 def create_trie(words):
@@ -21,7 +20,7 @@ def create_trie(words):
 			child = parent.get_child(ch)
 			if child is None:
 				child = Trie(ch)
-				parent.append(child)
+				parent.add(child)
 			parent.children_cnt += 1
 			parent = child
 		parent.children_cnt += 1
