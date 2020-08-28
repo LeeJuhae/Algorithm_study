@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-# UTF-8 encoding when using korean
 import sys
 
 def dfs(loc, visited, dist, min_dist):
