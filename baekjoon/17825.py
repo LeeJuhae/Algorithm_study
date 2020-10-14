@@ -1,13 +1,19 @@
 import sys
 from collections import deque
 
-def get_end_point_cnt(pieces):
-	end_point = [[0, 20], [10, 7], [20, 6], [30, 7]]
+def get_cnt(pieces, board):
 	cnt = 0
 	for piece in pieces:
-		if piece in end_point:
+		if piece in board:
 			cnt += 1
 	return cnt
+
+def isDuplicate(pieces):
+	boards = [[[10, 4], [20, 3], [30, 4]], [[10, 5], [20, 4], [30, 5]], [[10, 6], [20, 5], [30, 6]], [[0, 20], [10, 7], [20, 6], [30, 7]]]
+	for board in boards:
+		if get_cnt(pieces, board) > 1:
+			return True
+	return False
 
 def play(dice, pieces):
 	way = \
@@ -42,7 +48,7 @@ def play(dice, pieces):
 				# 바뀐 말의 위치가 적용된 말들의 위치 리스트
 				temp = piece[:i] + [[key, value]] + piece[i+1:]
 				# 40에 위치한 말이 2개 이상일 경우 pass
-				if get_end_point_cnt(temp) > 1:
+				if isDuplicate(temp):
 					continue
 				# 말이 갈 곳에 다른 말이 없을 경우
 				if [key, value] != [-1, -1] and [key, value] not in piece:
