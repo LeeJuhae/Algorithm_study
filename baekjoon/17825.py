@@ -47,7 +47,7 @@ def play(dice, pieces):
 					value = piece[i][1] + dice[d_idx]
 				# 바뀐 말의 위치가 적용된 말들의 위치 리스트
 				temp = piece[:i] + [[key, value]] + piece[i+1:]
-				# 40에 위치한 말이 2개 이상일 경우 pass
+				# 25, 30, 35, 40에 위치한 말이 2개 이상일 경우 pass
 				if isDuplicate(temp):
 					continue
 				# 말이 갈 곳에 다른 말이 없을 경우
@@ -60,5 +60,6 @@ def play(dice, pieces):
 	return all_sum
 
 dice = list(map(int, sys.stdin.readline().split()))
+# pieces의 원소 하나 하나는 [way의 key, way의 value index]를 의미함
 pieces = [[0,0],[0,0],[0,0],[0,0]]
 print(play(dice, pieces))
