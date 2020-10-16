@@ -1,4 +1,6 @@
-class Solution {
+package programmers.Level1;
+
+public class Solution {
   public String solution(String s) {
       String answer = "";
       int idx = 0;

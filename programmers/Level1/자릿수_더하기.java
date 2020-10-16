@@ -1,6 +1,7 @@
+package programmers.Level1;
 import java.util.*;
 
-public class Solution {
+public class Solution1 {
     public int solution(int n) {
         int answer = 0;
         String str = Integer.toString(n);
