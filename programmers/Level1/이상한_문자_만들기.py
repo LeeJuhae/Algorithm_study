@@ -9,6 +9,6 @@ def solution(s):
         if ind % 2 == 0:
             answer += s[i].upper()
         else:
-            answer += s[i].lower()  
+            answer += s[i].lower()
         ind += 1
     return answer
