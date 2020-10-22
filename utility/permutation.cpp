@@ -9,17 +9,19 @@ template <typename T>
 vector<vector<T> > permutation(vector<T>& arr, int k) {
 	int arr_size = arr.size();
 	vector<vector<T> >ret;
-	vector<int> flag(arr_size);
+	vector<bool> flag(arr_size);
 
-	for (int j = 0 ; j < k ; ++j)
-		flag[j] = 1;
-	for (int j = k ; j < arr_size ; ++j)
-		flag[j] = 0;
+	for (int i = 0 ; i < k ; ++i) {
+		if (i < k)
+			flag[i] = true;
+		else
+			flag[i] = false;
+	}
 	sort(flag.begin(), flag.end());
 
 	do {
 		vector<T> temp;
-		for(int i = 0; i < flag.size() ; ++i) {
+		for(int i = 0; i < arr_size ; ++i) {
 			if (flag[i])
 				temp.push_back(arr[i]);
 		}
