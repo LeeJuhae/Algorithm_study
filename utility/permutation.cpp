@@ -1,4 +1,3 @@
-#include <string>
 #include <vector>
 #include <algorithm>
 #include <cstdio>
@@ -32,14 +31,14 @@ vector<vector<T> > permutation(vector<T>& arr, int k) {
 	return ret;
 }
 
-int main(){
-	vector <int> arr = {1,2,3,4};
-	vector<vector<int> > ret;
-	ret = permutation(arr, 3);
-	for (auto &row : ret) {
-		for (auto &col : row)
-			printf("%d ", col);
-		printf("\n");
-	}
-	return 0;
-}
+// int main(){
+// 	vector <int> arr = {1,2,3,4};
+// 	vector<vector<int> > ret;
+// 	ret = permutation(arr, 3);
+// 	for (auto &row : ret) {
+// 		for (auto &col : row)
+// 			printf("%d ", col);
+// 		printf("\n");
+// 	}
+// 	return 0;
+// }
