@@ -37,10 +37,10 @@ descend = dijkstra(False)[1:]
 dist = list(map(sum, zip(ascend, descend)))
 ans = -float('inf')
 for i in range(n):
-	achievement = heights[i] * e
 	consumption = dist[i] * d
-	if achievement == float('inf') or consumption == float('inf'):
+	if consumption == float('inf'):
 		continue
+	achievement = heights[i] * e
 	ans = max(ans, achievement - consumption)
 print(ans if ans != -float('inf') else 'Impossible')
 
