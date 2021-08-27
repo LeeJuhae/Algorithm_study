@@ -1,4 +1,5 @@
 # https://www.acmicpc.net/problem/12865
+# https://hongcoding.tistory.com/50
 
 import sys
 
